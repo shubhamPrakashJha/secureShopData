@@ -18,6 +18,9 @@ app = Flask(__name__)
 #ADD @auth.verify_password here
 
 #ADD a /users route here
+@app.route("/users", methods=['POST'])
+def new_user():
+    return "Route to add new users"
 
 
 
