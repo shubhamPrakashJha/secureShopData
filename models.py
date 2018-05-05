@@ -18,7 +18,7 @@ class User(Base):
 		self.password_hash = custom_app_context.hash(password)
 
 	def verify_password(self, password):
-		custom_app_context.verify(password, self.password_hash)
+		return custom_app_context.verify(password, self.password_hash)
 
 class Bagel(Base):
 	__tablename__ = 'bagel'
