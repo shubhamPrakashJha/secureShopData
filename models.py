@@ -17,6 +17,9 @@ class User(Base):
 	def hash_password(self, password):
 		self.password_hash = custom_app_context.hash(password)
 
+	def verify_password(self, password):
+		custom_app_context.verify(password, self.password_hash)
+
 class Bagel(Base):
 	__tablename__ = 'bagel'
 	id = Column(Integer, primary_key=True)
