@@ -47,6 +47,7 @@ def new_user():
 
 @app.route('/bagels', methods=['GET', 'POST'])
 # protect this route with a required login
+@auth.login_required
 def showAllBagels():
 	if request.method == 'GET':
 		bagels = session.query(Bagel).all()
